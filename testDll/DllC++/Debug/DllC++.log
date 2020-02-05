@@ -1,0 +1,12 @@
+﻿  pch.cpp
+  dllmain.cpp
+C:\Users\Лаврентий Гусев\source\repos\testDll\DllC++\dllmain.cpp(36,1): warning C4273: fibonacci_init: несовместимое связывание dll
+C:\Users\Лаврентий Гусев\source\repos\testDll\DllC++\testDll.h(23,33): message : см. предыдущее определение "fibonacci_init"
+C:\Users\Лаврентий Гусев\source\repos\testDll\DllC++\dllmain.cpp(45,1): warning C4273: fibonacci_next: несовместимое связывание dll
+C:\Users\Лаврентий Гусев\source\repos\testDll\DllC++\testDll.h(29,33): message : см. предыдущее определение "fibonacci_next"
+C:\Users\Лаврентий Гусев\source\repos\testDll\DllC++\dllmain.cpp(66,1): warning C4273: fibonacci_current: несовместимое связывание dll
+C:\Users\Лаврентий Гусев\source\repos\testDll\DllC++\testDll.h(32,47): message : см. предыдущее определение "fibonacci_current"
+C:\Users\Лаврентий Гусев\source\repos\testDll\DllC++\dllmain.cpp(72,1): warning C4273: fibonacci_index: несовместимое связывание dll
+C:\Users\Лаврентий Гусев\source\repos\testDll\DllC++\testDll.h(35,37): message : см. предыдущее определение "fibonacci_index"
+     Создается библиотека C:\Users\Лаврентий Гусев\source\repos\testDll\Debug\DllC++.lib и объект C:\Users\Лаврентий Гусев\source\repos\testDll\Debug\DllC++.exp
+  DllC++.vcxproj -> C:\Users\Лаврентий Гусев\source\repos\testDll\Debug\DllC++.dll

@@ -1,0 +1,8 @@
+﻿  dllmain.cpp
+C:\Users\Лаврентий Гусев\source\repos\testDll\DllC++\dllmain.cpp(27,1): warning C4273: helloWorld: несовместимое связывание dll
+C:\Users\Лаврентий Гусев\source\repos\testDll\DllC++\testDll.h(4,26): message : см. предыдущее определение "helloWorld"
+C:\Users\Лаврентий Гусев\source\repos\testDll\DllC++\dllmain.cpp(31,36): warning C4273: A::A: несовместимое связывание dll
+C:\Users\Лаврентий Гусев\source\repos\testDll\DllC++\testDll.h(10,2): message : см. предыдущее определение "{ctor}"
+C:\Users\Лаврентий Гусев\source\repos\testDll\DllC++\dllmain.cpp(37,1): warning C4273: A::print: несовместимое связывание dll
+C:\Users\Лаврентий Гусев\source\repos\testDll\DllC++\testDll.h(11,23): message : см. предыдущее определение "print"
+  DllC++.vcxproj -> C:\Users\Лаврентий Гусев\source\repos\testDll\x64\Debug\DllC++.dll
