@@ -5,6 +5,7 @@
 #include <vector>
 #include <iostream>
 #include <fstream>
+#include <exception>
 #include "../Basic Dependencies/CorrectStreamInput.h"
 #include "../Basic Dependencies/Square.h"
 #include "../Basic Dependencies/Field.h"

@@ -1,12 +1,13 @@
 #pragma once
-#define __declspec myExtern
+#define myExtern __declspec(dllexport)
 
 class Draught : public Piece
 {
 	static double price;
 	static std::vector<Draught> pieceStart;
 public:
-	std::vector<Piece*> getStartPosition(std::fstream &in);
+	myExtern std::vector<Piece*> getStartPosition(std::istream &in);
+	std::vector<Position*> toNextPositions(Position* startPosition);
 	void setPrice(double _price) { price = _price; };
 	double getPrice() const override { return price; };
 	Draught(int _colourId, int _x, int _y);
@@ -14,10 +15,10 @@ public:
 	Draught(const Draught& draught);
 };
 
-std::vector<Piece*> Draught::getStartPosition(std::fstream& in)
+std::vector<Piece*> Draught::getStartPosition(std::istream& in)
 {
 	std::vector<Piece*> pieceStart;
-	findPieceInStartPosFile(in);
+	findPieceStartPos(in);
 	char a = ' ';
 	in.ignore(2);
 	price = getDoubleFromStream(in);

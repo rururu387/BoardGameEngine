@@ -1,4 +1,5 @@
 #pragma once
+#include <functional>
 
 class Piece
 {
@@ -18,7 +19,8 @@ public:
 	void setColourId(int _colourId) { colourId = _colourId; };
 	//Returns piece's price
 	double getValue(const Piece& piece) const { return piece.getPrice(); };
-	std::fstream& findPieceInStartPosFile(std::fstream& in);
+	virtual std::istream& findPieceStartPos(std::istream& in) { throw (std::bad_function_call()); };
+	virtual std::vector<Position*> toNextPositions(Position* startPosition) { throw (std::bad_function_call()); };
 	Piece(std::string _name, int _colourId, Square* _piecePosition)
 	{
 		name = _name;
@@ -36,7 +38,7 @@ Piece::Piece(const Piece& _piece)
 	colourId = _piece.getColourId();
 }
 
-std::fstream& Piece::findPieceInStartPosFile(std::fstream &in)
+std::istream& Piece::findPieceStartPos(std::istream &in)
 {
 	int cnt = 0;
 	while (!in.eof())
