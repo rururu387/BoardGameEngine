@@ -7,7 +7,8 @@ class Draught : public Piece
 	static std::vector<Draught> pieceStart;
 public:
 	myExtern std::vector<Piece*> getStartPosition(std::istream &in);
-	std::vector<Position*> toNextPositions(Position* startPosition);
+	Position* toNextPosition(Position* startPosition, int piecePosHash, std::map<int, Piece*> pieceMap, int moveToX, int moveToY, int xEaten, int yEaten);
+	std::unordered_set<Position*> toNextPositions(Position* startPosition);
 	void setPrice(double _price) { price = _price; };
 	double getPrice() const override { return price; };
 	Draught(int _colourId, int _x, int _y);

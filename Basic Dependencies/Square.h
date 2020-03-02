@@ -5,11 +5,10 @@ class Square
 {
 	int x;
 	int y;
-	bool isBusy;
 public:
 	int getX() { return x; };
 	int getY() { return y; };
-	bool getIsBusy() { return isBusy; };
-	bool setIsBusy(bool _isBusy) { isBusy = _isBusy; };
-	Square(int _x, int _y) { x = _x; y = _y; isBusy = false; };
+	void setX(int _x) { x = _x; };
+	void setY(int _y) { y = _y; };
+	Square(int _x, int _y) { x = _x; y = _y; };
 };

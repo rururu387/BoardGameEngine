@@ -11,7 +11,7 @@ public:
 	//To create a new piece you have to override the following function
 	virtual double getPrice() const = 0;
 	Square* getPosition() const { return piecePosition; };
-	void setPosition(Square* _piecePosition) { piecePosition = _piecePosition; };
+	void setPosition(int x, int y) { piecePosition->setX(x); piecePosition->setY(y); };
 	std::string getName() const { return name; };
 	void setName(std::string _name) { name = _name; };
 	//ColourId is a shortened unfo about colour. It is fully stored in class Colour

@@ -29,7 +29,7 @@ int main()
 }*/
 
 //#include "stdafx.h"
-#include "Windows.h"
+/*#include "Windows.h"
 #include <iostream>
 #include <filesystem>
 
@@ -47,4 +47,30 @@ void main()
 		} while (FindNextFile(hf, &FindFileData) != 0);
 		FindClose(hf);
 	}
-}
+}*/
+
+/*#include <iostream>
+#include <map>
+
+using namespace std;
+
+int main()
+{
+	std::map<int, char> myMap;
+	myMap[0] = 'a';
+	myMap.erase(myMap.end());
+	std::cout << myMap[0];
+
+	return 0*/
+
+/*#include <functional>
+#include <iostream>
+
+int main()
+{
+	std::hash<int> hashFn;
+	std::hash<int> hashFn2;
+	int a = 5;
+	std::cout << hashFn(a) << '\t' << hashFn2(a);
+	return 0;
+}*/
