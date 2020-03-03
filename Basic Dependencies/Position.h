@@ -7,10 +7,26 @@ class Position
 public:
 	Position(Field* _field, std::map<int, Piece*> _pieceMap);
 	Position(Field* _field, std::vector<Piece*> pieceVector);
-	Field* getField() { return field; };
-	std::map<int, Piece*> getPieceMap() { return pieceMap; };
+	Position(const Position &_pos);
+	Field* getField() const { return field; };
+	std::map<int, Piece*> getPieceMap() const { return pieceMap; };
+	double getPriceEval();
 	~Position();
 };
+
+Position::Position(const Position &_pos)
+{
+	field = new Field(*(_pos.field));
+	pieceMap = std::map<int, Piece*> (_pos.pieceMap);
+}
+
+double Position::getPriceEval()
+{
+	for (std::map<int, Piece*>::iterator it = pieceMap.begin(); it != pieceMap.end(); it++)
+	{
+		it->second->getValue();
+	}
+}
 
 Position::Position(Field* _field, std::map<int, Piece*> _pieceMap)
 {

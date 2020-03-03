@@ -3,14 +3,15 @@
 
 class Draught : public Piece
 {
-	static double price;
+	static double value;
 	static std::vector<Draught> pieceStart;
 public:
 	myExtern std::vector<Piece*> getStartPosition(std::istream &in);
-	Position* toNextPosition(Position* startPosition, int piecePosHash, std::map<int, Piece*> pieceMap, int moveToX, int moveToY, int xEaten, int yEaten);
-	std::unordered_set<Position*> toNextPositions(Position* startPosition);
-	void setPrice(double _price) { price = _price; };
-	double getPrice() const override { return price; };
+	std::unordered_set<Position*> toNextPosition(const Position* startPosition, int piecePosHash, int moveToX, int moveToY, int xEaten, int yEaten);
+	bool toNextTake();
+	std::unordered_set<Position*> toNextPositions(const Position* startPosition);
+	void setPrice(double _value) { value = _value; };
+	double getValue() const override { return value; };
 	Draught(int _colourId, int _x, int _y);
 	Draught(int _colourId, Square* _piecePosition);
 	Draught(const Draught& draught);
@@ -22,7 +23,7 @@ std::vector<Piece*> Draught::getStartPosition(std::istream& in)
 	findPieceStartPos(in);
 	char a = ' ';
 	in.ignore(2);
-	price = getDoubleFromStream(in);
+	value = getDoubleFromStream(in);
 	while (!in.eof() && a != ';')
 	{
 		char a;
@@ -91,7 +92,7 @@ Draught::Draught(int _colourId, int _x, int _y) : Piece("Draught", _colourId, ne
 
 Draught::Draught(const Draught& draught) : Piece(draught)
 {
-	price = draught.getPrice();
+	value = draught.getPrice();
 }
 
 Draught::Draught(int _colourId, Square* _piecePosition) : Piece("Draught", _colourId, _piecePosition)

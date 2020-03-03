@@ -17,10 +17,10 @@ public:
 	//ColourId is a shortened unfo about colour. It is fully stored in class Colour
 	int getColourId() const { return colourId; };
 	void setColourId(int _colourId) { colourId = _colourId; };
-	//Returns piece's price
-	double getValue(const Piece& piece) const { return piece.getPrice(); };
+	//Returns piece's value
+	virtual double getValue() const { throw (std::bad_function_call()); };
 	virtual std::istream& findPieceStartPos(std::istream& in) { throw (std::bad_function_call()); };
-	virtual std::vector<Position*> toNextPositions(Position* startPosition) { throw (std::bad_function_call()); };
+	virtual std::unordered_set<Position*> toNextPositions(Position* startPosition) { throw (std::bad_function_call()); std::unordered_set<Position*> nullSet = std::unordered_set<Position*>();  return nullSet; };
 	Piece(std::string _name, int _colourId, Square* _piecePosition)
 	{
 		name = _name;
@@ -28,7 +28,6 @@ public:
 		piecePosition = _piecePosition;
 	}
 	Piece(const Piece& _piece);
-	virtual std::vector<Position*> toNextPositions(Position startPosition) {};
 };
 
 Piece::Piece(const Piece& _piece)

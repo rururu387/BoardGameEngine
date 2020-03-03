@@ -9,9 +9,15 @@ public:
 	Field(int size);
 	Field(int m, int n);
 	Field(std::map<int, Square*> _field) { field = _field; };
+	Field(const Field &_field);
 	~Field();
 	std::map<int, Square*>::iterator searchSquare(int x, int y);
 };
+
+Field::Field(const Field &_field)
+{
+	field = std::map<int, Square*>(_field);
+}
 
 std::map<int, Square*>::iterator Field::searchSquare(int x, int y)
 {
