@@ -9,7 +9,6 @@ class Piece
 public:
 	//Each piece must have a value representing it. The bigger value the more important it is for player. E. g. queen has a value of 9 pawns
 	//To create a new piece you have to override the following function
-	virtual double getPrice() const = 0;
 	Square* getPosition() const { return piecePosition; };
 	void setPosition(int x, int y) { piecePosition->setX(x); piecePosition->setY(y); };
 	std::string getName() const { return name; };
@@ -19,7 +18,7 @@ public:
 	void setColourId(int _colourId) { colourId = _colourId; };
 	//Returns piece's value
 	virtual double getValue() const { throw (std::bad_function_call()); };
-	virtual std::istream& findPieceStartPos(std::istream& in) { throw (std::bad_function_call()); };
+	virtual std::istream& findPieceStartPos(std::istream& in);
 	virtual std::unordered_set<Position*> toNextPositions(Position* startPosition) { throw (std::bad_function_call()); std::unordered_set<Position*> nullSet = std::unordered_set<Position*>();  return nullSet; };
 	Piece(std::string _name, int _colourId, Square* _piecePosition)
 	{
@@ -50,7 +49,7 @@ std::istream& Piece::findPieceStartPos(std::istream &in)
 		{
 			cnt = 0;
 		}
-		if (cnt == getName().length)
+		if (cnt == getName().length())
 		{
 			return in;
 		}

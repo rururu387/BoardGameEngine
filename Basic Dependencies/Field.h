@@ -4,7 +4,7 @@ class Field
 {
 	std::map<int, Square*> field;
 public:
-	std::map<int, Square*> getField() { return field; };
+	std::map<int, Square*> getField() const { return field; };
 	std::map<int, Square*>::iterator getFieldEnd() { return field.end(); };
 	Field(int size);
 	Field(int m, int n);
@@ -16,7 +16,7 @@ public:
 
 Field::Field(const Field &_field)
 {
-	field = std::map<int, Square*>(_field);
+	field = _field.getField();
 }
 
 std::map<int, Square*>::iterator Field::searchSquare(int x, int y)

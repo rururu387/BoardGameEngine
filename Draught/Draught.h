@@ -7,10 +7,10 @@ class Draught : public Piece
 	static std::vector<Draught> pieceStart;
 public:
 	myExtern std::vector<Piece*> getStartPosition(std::istream &in);
-	std::unordered_set<Position*> toNextPosition(const Position* startPosition, int piecePosHash, int moveToX, int moveToY, int xEaten, int yEaten);
-	bool toNextTake();
+	std::unordered_set<Position*> toFirstStepPosition(Position* startPosition, int piecePosHash, int x, int y, int moveToX, int moveToY, int xEaten, int yEaten);
+	std::unordered_set<Position*> toNextTake(Position* startPosition, int piecePosHash, int x, int y, int moveToX, int moveToY, int xEaten, int yEaten);
 	std::unordered_set<Position*> toNextPositions(const Position* startPosition);
-	void setPrice(double _value) { value = _value; };
+	void setValue(double _value) { value = _value; };
 	double getValue() const override { return value; };
 	Draught(int _colourId, int _x, int _y);
 	Draught(int _colourId, Square* _piecePosition);
@@ -92,7 +92,7 @@ Draught::Draught(int _colourId, int _x, int _y) : Piece("Draught", _colourId, ne
 
 Draught::Draught(const Draught& draught) : Piece(draught)
 {
-	value = draught.getPrice();
+	value = draught.getValue();
 }
 
 Draught::Draught(int _colourId, Square* _piecePosition) : Piece("Draught", _colourId, _piecePosition)
