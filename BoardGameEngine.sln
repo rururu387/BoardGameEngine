@@ -9,11 +9,23 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Draught", "Draught\Draught.
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C67FDEF3-5A26-4A3C-A55C-E6FEEAA630B3}"
 	ProjectSection(SolutionItems) = preProject
+		Basic Dependencies\CircleQueue.cpp = Basic Dependencies\CircleQueue.cpp
+		Basic Dependencies\CircleQueue.h = Basic Dependencies\CircleQueue.h
+		Basic Dependencies\CircleQueueNode.cpp = Basic Dependencies\CircleQueueNode.cpp
+		Basic Dependencies\CircleQueueNode.h = Basic Dependencies\CircleQueueNode.h
+		Basic Dependencies\CorrectStreamInput.cpp = Basic Dependencies\CorrectStreamInput.cpp
 		Basic Dependencies\CorrectStreamInput.h = Basic Dependencies\CorrectStreamInput.h
+		Basic Dependencies\Field.cpp = Basic Dependencies\Field.cpp
 		Basic Dependencies\Field.h = Basic Dependencies\Field.h
 		Basic Dependencies\MyBadTypeIdException.h = Basic Dependencies\MyBadTypeIdException.h
+		Basic Dependencies\Piece.cpp = Basic Dependencies\Piece.cpp
 		Basic Dependencies\Piece.h = Basic Dependencies\Piece.h
+		Basic Dependencies\Player.cpp = Basic Dependencies\Player.cpp
+		Basic Dependencies\Player.h = Basic Dependencies\Player.h
+		Basic Dependencies\Position.cpp = Basic Dependencies\Position.cpp
 		Basic Dependencies\Position.h = Basic Dependencies\Position.h
+		Basic Dependencies\RGBColour.h = Basic Dependencies\RGBColour.h
+		Basic Dependencies\Square.cpp = Basic Dependencies\Square.cpp
 		Basic Dependencies\Square.h = Basic Dependencies\Square.h
 	EndProjectSection
 EndProject

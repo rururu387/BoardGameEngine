@@ -141,6 +141,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Source.cpp" />
+    <ClCompile Include="PrintSource.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PrintHeader.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

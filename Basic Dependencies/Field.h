@@ -1,59 +1,18 @@
 #pragma once
+#include <map>
+#include "Square.h"
 
 class Field
 {
-	std::map<int, Square*> field;
+	std::multimap<int, Square*> field;
 public:
-	std::map<int, Square*> getField() const { return field; };
-	std::map<int, Square*>::iterator getFieldEnd() { return field.end(); };
+	std::multimap<int, Square*> getField() const { return field; };
+	std::multimap<int, Square*>::iterator getFieldEnd() { return field.end(); };
 	Field(int size);
 	Field(int m, int n);
-	Field(std::map<int, Square*> _field) { field = _field; };
+	Field(std::multimap<int, Square*> _field) { field = _field; };
 	Field(const Field &_field);
 	~Field();
-	std::map<int, Square*>::iterator searchSquare(int x, int y);
+	std::multimap<int, Square*>::iterator searchSquare(Square sq) const;
+	std::multimap<int, Square*>::iterator searchSquare(int x, int y) const;
 };
-
-Field::Field(const Field &_field)
-{
-	field = _field.getField();
-}
-
-std::map<int, Square*>::iterator Field::searchSquare(int x, int y)
-{
-	std::hash<int> hashFn;
-	std::map<int, Square*>::iterator it = field.find(hashFn(x) / 2 + (hashFn(y) / 2));
-	return it;
-}
-
-Field::Field(int size)
-{
-	std::hash<int> hashFn;
-	for (int i = 1; i < size; i++)
-	{
-		for (int j = 0; j < size; j++)
-		{
-			field[hashFn(i) / 2 + (hashFn(j) / 2)] = new Square(i, j);
-		}
-	}
-}
-
-Field::Field(int m, int n)
-{
-	std::hash<int> hashFn;
-	for (int i = 1; i < m; i++)
-	{
-		for (int j = 0; j < n; j++)
-		{
-			field[hashFn(i) / 2 + (hashFn(j) / 2)] = new Square(i, j);
-		}
-	}
-}
-
-Field::~Field()
-{
-	for (std::map<int, Square*>::iterator it = field.begin(); it != field.end(); it++)
-	{
-		delete it->second;
-	}
-}

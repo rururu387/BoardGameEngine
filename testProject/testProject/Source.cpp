@@ -74,3 +74,75 @@ int main()
 	std::cout << hashFn(a) << '\t' << hashFn2(a);
 	return 0;
 }*/
+
+/*#include <iostream>
+#include "../../Basic Dependencies/CircleQueueNode.h"
+#include "../../Basic Dependencies/CircleQueue.h"
+
+int main()
+{
+	CircleQueue<int>* queue = new CircleQueue<int>();
+	int* a = new int(5);
+	queue->addElement(0, a);
+	int* b = new int(10);
+	queue->addElement(1, b, 1);
+	int* c = new int(7);
+	queue->addElement(1, c, 1);
+	int* d = new int(11);
+	queue->addElement(1, d, 1);
+	queue->removeElement(3, 1);
+	queue->print();
+	queue->~CircleQueue();
+	return 0;
+}*/
+
+/*#include <iostream>
+#include <map>
+
+int main()
+{
+	std::multimap<int, char> m;
+	m.insert(std::pair<int, char> (1, 'a'));
+	m.insert(std::pair<int, char> (1, 'b'));
+	m.insert(std::pair<int, char> (1, 'c'));
+	auto c = m.equal_range(1);
+	for (auto it = c.first; it != c.second; it++)
+	{
+		std::cout << it->second;
+	}
+	return 0;
+}*/
+
+/*#include "time.h"
+#include <iostream>
+#include <unordered_set>
+#include <string>
+
+int main()
+{
+	std::unordered_set<int> s1;
+	std::unordered_set<int> s2;
+	srand(time(NULL));
+	for (int i = 0; i < 10; i++)
+		s1.insert(rand() % 100);
+	for (auto it = s1.begin(); it != s1.end(); it++)
+	{
+		s2.insert(*it);
+	}
+	s1.clear();
+	for (auto it = s2.begin(); it != s2.end(); it++)
+	{
+		std::cout << std::to_string(*it) << " ";
+	}
+	return 0;
+}*/
+
+#include <iostream>
+#include <string>
+#include "PrintHeader.hpp"
+
+int main()
+{
+	myPrintEFR();
+	return 0;
+}
